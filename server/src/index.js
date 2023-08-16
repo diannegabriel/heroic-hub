@@ -1,12 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-dotenv.config();
+const cors = require("cors");
 
-console.log(process.env.MONGO_URI)
+dotenv.config();
 
 const app = express();
 
+app.use(cors());
 app.use(morgan("tiny"));
 
 app.get("todos", (req, res) => {});
