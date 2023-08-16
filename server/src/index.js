@@ -20,7 +20,7 @@ app.use(morgan("dev")); // What would show on the console -> GET /login 200 0.29
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
 
-mongoose.connect(`mongodb+srv://${dbUser}:${dbPass}@goals.7srizb6.mongodb.net/?retryWrites=true&w=majority`);
+mongoose.connect(`mongodb+srv://${dbUser}:${dbPass}@goals.7srizb6.mongodb.net/goals?retryWrites=true&w=majority`);
 
 app.use(router);
 
