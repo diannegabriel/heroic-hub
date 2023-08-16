@@ -7,9 +7,14 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
-app.use(morgan("tiny"));
+// The browser naturally prevents from hitting APIs that dont have the same domain.
+// CORS allows restricted resources on web page to be accessed from another domain
+app.use(cors()); 
 
-app.get("todos", (req, res) => {});
+// Morgan simplifies the process of logging requests to the application
+app.use(morgan("tiny")); // What would show on the console -> GET / 404 139 - 0.974 ms
+
+app.post("/login", (req, res) => {
+});
 
 app.listen(8080);
