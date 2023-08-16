@@ -17,6 +17,8 @@ app.use(cors());
 // Morgan simplifies the process of logging requests to the application
 app.use(morgan("dev")); // What would show on the console -> GET /login 200 0.293 ms - 6
 
+mongoose.connect("");
+
 app.use(router);
 
 app.listen(8080);
