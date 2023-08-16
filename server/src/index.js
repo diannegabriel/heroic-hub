@@ -15,5 +15,6 @@ app.use(cors());
 
 // Morgan simplifies the process of logging requests to the application
 app.use(morgan("tiny")); // What would show on the console -> GET / 404 139 - 0.974 ms
+app.use(router);
 
 app.listen(8080);
