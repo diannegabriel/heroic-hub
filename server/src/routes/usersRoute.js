@@ -27,6 +27,12 @@ router.post("/login", async (req, res) => {
   if (!user) {
     return res.json({ message: "User doesn't exist." });
   }
+
+  const isPwValid = await bcrypt.compare(password, user.password);
+
+  if (!isPwValid) {
+    return res.json({ message: "Username or password is incorrect."});
+  }
 });
 
 module.exports = router;
