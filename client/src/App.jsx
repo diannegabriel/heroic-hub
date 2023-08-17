@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
+import readGoalsDefault from './api/readGoalsDefault'
 
 function App() {
+  useEffect(() => {
+    readTodosRequest().then(allGoals => {
+      console.log(allGoals)
+    })
+  }, [])
 
   return (
     <div>
