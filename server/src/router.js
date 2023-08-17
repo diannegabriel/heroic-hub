@@ -1,8 +1,9 @@
 const express = require("express");
+const isLoggedIn = require("./middleware/isLoggedIn");
 
 const router = express.Router();
 
 router.use("/auth", require("./routes/usersRoute"));
-router.get("/daily-goals", require("./routes/dailiesRoute"));
+router.get("/daily-goals", isLoggedIn, require("./routes/dailiesRoute"));
 
 module.exports = router;
