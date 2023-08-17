@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-module.exports = (req, res) => {
+module.exports = (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) {
     // 401 error means token wasn't provided or malformed
@@ -12,6 +12,9 @@ module.exports = (req, res) => {
       if (err) {
         // 403 error means token has been provided but no access
         res.status(403).send("Invalid credentials");
+      } else {
+        // next() allows the router to go to the next section
+        next();
       }
     });
   }
