@@ -3,6 +3,8 @@ import './App.css'
 import readGoalsRequest from './api/readGoalsRequest'
 
 function App() {
+  const [goals, setGoals] = useState([]);
+  
   useEffect(() => {
     readGoalsRequest().then(allGoals => {
       console.log(allGoals)
