@@ -20,6 +20,13 @@ router.post("/register", async (req, res) => {
   res.json({ message: "User registered successfully." });
 });
 
-router.post("/login");
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  const user = await UserModel.findOne({ username });
+
+  if (!user) {
+    return res.json({ message: "User doesn't exist." });
+  }
+});
 
 module.exports = router;
