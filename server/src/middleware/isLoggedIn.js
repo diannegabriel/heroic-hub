@@ -7,7 +7,6 @@ module.exports = (req, res, next) => {
     res.status(401).send("Invalid credentials");
   } else {
     const token = authHeader.split(" ")[1];
-    console.log(token);
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
       if (err) {
         // 403 error means token has been provided but no access
