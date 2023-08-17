@@ -17,11 +17,15 @@ app.use(cors());
 // Morgan simplifies the process of logging requests to the application
 app.use(morgan("dev")); // What would show on the console -> GET /login 200 0.293 ms - 6
 
+// Built in middleware function in Express.
+// It parses incoming JSON requests and puts the parsed data in req.body
+app.use(express.json());
+app.use(router);
+
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
 
 mongoose.connect(`mongodb+srv://${dbUser}:${dbPass}@goals.7srizb6.mongodb.net/goals?retryWrites=true&w=majority`);
 
-app.use(router);
 
 app.listen(8080);
