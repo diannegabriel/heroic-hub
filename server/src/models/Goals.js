@@ -8,6 +8,6 @@ const GoalsSchema = new mongoose.Schema({
   goalAttribute: { type: [String], required: true },
 });
 
-const GoalsModel = mongoose.model("users", GoalsModel);
+const GoalsModel = mongoose.model("goals", GoalsSchema);
 
 module.exports = GoalsModel;

@@ -1,5 +1,6 @@
 const GoalsModel = require("../models/Goals");
 
-module.exports = (req, res) => {
-  res.send("Success!");
+module.exports = async (req, res) => {
+  const goals = await GoalsModel();
+  res.json("Success!");
 };
