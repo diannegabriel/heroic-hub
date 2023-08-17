@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.use("/auth", require("./routes/usersRoute"));
 router.get("/goals", isLoggedIn, require("./routes/readGoalsRoute"));
-router.post("/goals", isLoggedIn, require("./routes/createGoalsRoute"));
+router.post("/goals", isLoggedIn, require("./routes/createGoalRoute"));
 
 module.exports = router;
