@@ -2,10 +2,11 @@ const mongoose = require("mongoose");
 
 const GoalsSchema = new mongoose.Schema({
   userOwner: { type: String, required: true },
-  goalName: { type: String, required: true  },
-  goalType: { type: String, required: true  },
+  goalName: { type: String, required: true },
+  goalType: { type: String, required: true },
   goalDescription: { type: String },
-  goalAttribute: { type: [String], required: true  },
+  goalAttribute: { type: [String], required: true },
+  status: { type: String, required: true },
   // text: {
   //   type: String,
   // },
