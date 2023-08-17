@@ -7,7 +7,6 @@ module.exports = async (req, res) => {
     goalType,
     goalDescription,
     goalAttribute,
-    status,
   } = req.body;
   const goals = new GoalsModel({
     userOwner,
@@ -15,7 +14,7 @@ module.exports = async (req, res) => {
     goalType,
     goalDescription,
     goalAttribute,
-    status: "incomplete",
+    status: "incomplete"
     // text,
     // completed: false,
   });
