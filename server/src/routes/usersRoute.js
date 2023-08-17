@@ -31,8 +31,11 @@ router.post("/login", async (req, res) => {
   const isPwValid = await bcrypt.compare(password, user.password);
 
   if (!isPwValid) {
-    return res.json({ message: "Username or password is incorrect."});
+    return res.json({ message: "Username or password is incorrect." });
   }
+
+  const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN);
+  res.json({ token, userID: user._id });
 });
 
 module.exports = router;
