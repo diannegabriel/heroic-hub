@@ -1,9 +1,8 @@
 import React from "react";
+import { useQueryClient, useMutation } from "react-query";
 
 const GoalsItem = ({ goal }) => {
-  const handleStatusChange = () => {
-    
-  }
+  const handleStatusChange = () => {};
   return (
     <div>
       <button onClick={handleStatusChange}>
