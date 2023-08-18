@@ -2,10 +2,11 @@
 import "./App.css";
 import readGoalsRequest from "./api/readGoalsRequest";
 import { useQuery } from "react-query";
+import ClipLoader from "react-spinners/ClipLoader"
 
 function App() {
   // const [goals, setGoals] = useState([]);
-  const { isLoading, data: goals } = useQuery("todos", readGoalsRequest);
+  const { isLoading, data: goals } = useQuery("goals", readGoalsRequest);
 
   // useEffect(() => {
   //   readGoalsRequest().then(setGoals);
@@ -13,15 +14,19 @@ function App() {
 
   return (
     <div className="App">
-      {goals.map((goal) => (
-        <div key={goal._id}>
-          {goal.goal}
-          {goal.description}
-          {goal.type}
-          {goal.attribute}
-          {goal.status}
-        </div>
-      ))}
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        goals.map((goal) => (
+          <div key={goal._id}>
+            {goal.goal}
+            {goal.description}
+            {goal.type}
+            {goal.attribute}
+            {goal.status}
+          </div>
+        ))
+      )}
     </div>
   );
 }
