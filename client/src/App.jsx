@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       {isLoading ? (
-        <div>Loading...</div>
+        <ClipLoader size={150}/>
       ) : (
         goals.map((goal) => (
           <div key={goal._id}>
