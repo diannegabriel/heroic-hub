@@ -3,8 +3,9 @@ import React from "react";
 const GoalsItem = ({ goal }) => {
   return (
     <div>
-      <i class="nes-icon is-large star is-empty" />
-
+      <button onClick={handleStatusChange}>
+        <i class="nes-icon is-large star is-empty" />
+      </button>
       {goal.goal}
       {goal.description}
       {goal.type}
