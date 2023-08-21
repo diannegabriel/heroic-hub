@@ -7,6 +7,11 @@ import GoalItem from "./components/GoalItem";
 
 function App() {
   // const [goals, setGoals] = useState([]);
+
+  /* 
+  React Query helps keep track of states like how useState and useEffect are doing.
+  This avoids extra steps when implementing loading spinners.
+  */
   const { isLoading, data: goals } = useQuery("goals", readGoalsRequest);
 
   // useEffect(() => {
