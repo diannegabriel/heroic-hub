@@ -3,7 +3,7 @@ import "./App.css";
 import readGoalsRequest from "./api/readGoalsRequest";
 import { useQuery } from "react-query";
 import ClipLoader from "react-spinners/ClipLoader"
-import GoalsItem from "./components/GoalsItem";
+import GoalItem from "./components/GoalItem";
 
 function App() {
   // const [goals, setGoals] = useState([]);
@@ -19,7 +19,7 @@ function App() {
         <ClipLoader size={150}/>
       ) : (
         goals.map((goal) => (
-          <GoalsItem goal={goal} key={goal._id} />
+          <GoalItem goal={goal} key={goal._id} />
         ))
       )}
     </div>

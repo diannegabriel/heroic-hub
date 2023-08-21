@@ -2,7 +2,7 @@ import React from "react";
 import { useQueryClient, useMutation } from "react-query";
 import updateGoalRequest from "../api/updateGoalRequest";
 
-const GoalsItem = ({ goal }) => {
+const GoalItem = ({ goal }) => {
   const queryClient = new useQueryClient();
 
   const { mutate: toggleStatusChange } = useMutation(() => {
@@ -34,4 +34,4 @@ const GoalsItem = ({ goal }) => {
   );
 };
 
-export default GoalsItem;
+export default GoalItem;
