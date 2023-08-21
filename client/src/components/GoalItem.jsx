@@ -15,6 +15,10 @@ const GoalItem = ({ goal }) => {
       : goal.status === "incomplete" ? "in progress"
       : goal.status === "in progress" ? "complete" : ""
     });
+  }, {
+    onSettled: () => {
+      queryClient.invalidateQueries("goals");
+    }
   });
 
   let statusIcon = "";
