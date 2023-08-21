@@ -5,8 +5,11 @@ import updateGoalRequest from "../api/updateGoalRequest";
 const GoalItem = ({ goal }) => {
   const queryClient = new useQueryClient();
 
+  /* Updates the goal status
+  When the user clicks on the star, it will trigger the updateGoalRequest
+  Thus changing its status
+  */
   const { mutate: toggleStatusChange } = useMutation(() => {
-
     return updateGoalRequest({ ...goal, status: 
       goal.status === "complete" ? "incomplete"
       : goal.status === "incomplete" ? "in progress"
